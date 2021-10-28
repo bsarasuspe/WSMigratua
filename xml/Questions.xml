@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ShowXmlQuestions.xsl"?>
+<assessmentItems>
+  <assessmentItem author="rosa.arruabarrena@ehu.es" subject="Mikologia">
+    <itemBody>
+      <p>Zein Amanita da jangarria?</p>
+    </itemBody>
+    <correctResponse>
+      <response>Caesarea</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>Phalloides</response>
+      <response>Muscaria</response>
+      <response>Virosa</response>
+    </incorrectResponses>
+  </assessmentItem>
+  <assessmentItem author="mafalda001@ikasle.ehu.eus" subject="GIH/ODS">
+    <itemBody>
+      <p>Zer informatika enpresak eskaintzen du hezkuntza, desberdintasunak arintzeko materialak eskainiz?</p>
+    </itemBody>
+    <correctResponse>
+      <response>Google</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>Facebook</response>
+      <response>Twiter</response>
+      <response>VMicrosoft</response>
+    </incorrectResponses>
+  </assessmentItem>
+  <assessmentItem author="aruiz258@ikasle.ehu.eus" subject="EHU">
+    <itemBody>
+      <p>Zein irakasgaian garatu da web-orri hau?</p>
+    </itemBody>
+    <correctResponse>
+      <response>WS</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>SI2</response>
+      <response>SZA</response>
+      <response>DBD</response>
+    </incorrectResponses>
+  </assessmentItem>
+  <assessmentItem author="bsarasua@ehu.eus" subject="iepa">
+    <itemBody>
+      <p>galdera berria?</p>
+    </itemBody>
+    <correctResponse>
+      <response>bat</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>bi</response>
+      <response>hiru</response>
+      <response>lau</response>
+    </incorrectResponses>
+  </assessmentItem>
+  <assessmentItem author="bsarasua@ehu.eus" subject="galdera">
+    <itemBody>
+      <p>galdera irudirik gabe?</p>
+    </itemBody>
+    <correctResponse>
+      <response>ie</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>ie</response>
+      <response>ie</response>
+      <response>ie</response>
+    </incorrectResponses>
+  </assessmentItem>
+  <assessmentItem author="bsarasua@ehu.eus" subject="bost">
+    <itemBody>
+      <p>galdera berria ajax?</p>
+    </itemBody>
+    <correctResponse>
+      <response>bat</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>bi</response>
+      <response>hiru</response>
+      <response>lau</response>
+    </incorrectResponses>
+  </assessmentItem>
+  <assessmentItem author="bsarasua@ehu.eus" subject="eee">
+    <itemBody>
+      <p>galdera berria ajaxekin</p>
+    </itemBody>
+    <correctResponse>
+      <response>aja</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>aja</response>
+      <response>aja</response>
+      <response>ajaaa</response>
+    </incorrectResponses>
+  </assessmentItem>
+</assessmentItems>

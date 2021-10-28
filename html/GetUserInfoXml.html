@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/GetUserInfoXml.js"></script>
+</head>
+<body>
+    <section class="main" id="s1">
+        <h1>
+            Ikaslearen eposta erabilita datuak lortzeko (XML)
+        </h1>
+        <div id="userGal">
+            <form id="userGalF" enctype="multipart/form-data" method="post" onreset="hide_image()">
+                <!-- Eposta -->
+                <label for="eposta">Ikaslearen eposta:</label>
+                <input type="text" id="eposta" name="eposta"><br>
+
+
+                <label for="telefonoa">Ikaslearen telefonoa:</label>
+                <input type="text" id="telefonoa" readonly="readonly"><br>
+
+
+                <label for="izena">Ikaslearen izena:</label>
+                <input type="text" id="izena" readonly="readonly"><br>
+
+
+                <label for="abizenak">Ikaslearen abizena/k:</label>
+                <input type="text" id="abizenak" readonly="readonly"><br>
+            </form>
+            <button type="button" id="bilatu">Bilatu</button>
+        </div>
+    </section>
+</body>
+</html>

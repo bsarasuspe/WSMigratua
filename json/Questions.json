@@ -1,0 +1,123 @@
+{
+    "assessmentItems": [
+        {
+            "subject": "Mikologia",
+            "author": "rosa.arruabarrena@ehu.es",
+            "itemBody": {
+                "p": "Tripakiek zer dute kapela azpian?"
+            },
+            "correctResponse": {
+                "response": "Eztenak"
+            },
+            "incorrectResponses": {
+                "response": [
+                    "Filamenduak",
+                    "Himenioa",
+                    "Hodiak"
+                ]
+            }
+        },
+        {
+            "subject": "GIH\/ODS",
+            "author": "mafalda001@ikasle.ehu.eus",
+            "itemBody": {
+                "p": "Garapen Iraunkorreko Helburu kopurua da: "
+            },
+            "correctResponse": {
+                "response": "17"
+            },
+            "incorrectResponses": {
+                "response": [
+                    "16",
+                    "19",
+                    "18"
+                ]
+            }
+        },
+        {
+            "subject": "EHU",
+            "author": "aruiz258@ikasle.ehu.eus",
+            "itemBody": {
+                "p": "Zein irakasgaian garatu da web-orri hau?"
+            },
+            "correctResponse": {
+                "response": "WS"
+            },
+            "incorrectResponses": {
+                "response": [
+                    "SI2",
+                    "SZA",
+                    "DBD"
+                ]
+            }
+        },
+        {
+            "subject": "iepa",
+            "author": "bsarasua@ehu.eus",
+            "itemBody": {
+                "p": "galdera berria?"
+            },
+            "correctResponse": {
+                "response": "bat"
+            },
+            "incorrectResponses": {
+                "response": [
+                    "bi",
+                    "hiru",
+                    "lau"
+                ]
+            }
+        },
+        {
+            "subject": "galdera",
+            "author": "bsarasua@ehu.eus",
+            "itemBody": {
+                "p": "galdera irudirik gabe?"
+            },
+            "correctResponse": {
+                "response": "ie"
+            },
+            "incorrectResponses": {
+                "response": [
+                    "ie",
+                    "ie",
+                    "ie"
+                ]
+            }
+        },
+        {
+            "subject": "bost",
+            "author": "bsarasua@ehu.eus",
+            "itemBody": {
+                "p": "galdera berria ajax?"
+            },
+            "correctResponse": {
+                "response": "bat"
+            },
+            "incorrectResponses": {
+                "response": [
+                    "bi",
+                    "hiru",
+                    "lau"
+                ]
+            }
+        },
+        {
+            "subject": "eee",
+            "author": "bsarasua@ehu.eus",
+            "itemBody": {
+                "p": "galdera berria ajaxekin"
+            },
+            "correctResponse": {
+                "response": "aja"
+            },
+            "incorrectResponses": {
+                "response": [
+                    "aja",
+                    "aja",
+                    "ajaaa"
+                ]
+            }
+        }
+    ]
+}
