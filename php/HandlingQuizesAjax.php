@@ -18,11 +18,11 @@
         <div id="galdetegia">
             <div>
                 <b>Nire galderak / galderak guztira</b>
-                <div id="galderaKop" style="border:1px solid black; width:300px; margin:auto;"></div>
+                <div id="galderaKop" style="border:1px solid black; width:300px; margin:auto;">n</div>
             </div>
             <div>
                 <b>Kautotutako erabiltzaile kopurua</b>
-                <div id="galderaKop" style="border:1px solid black; width:300px; margin:auto;"></div>
+                <div id="userKop" style="border:1px solid black; width:300px; margin:auto;">n</div>
             </div><br>
             <?php
             $parametroak = "";

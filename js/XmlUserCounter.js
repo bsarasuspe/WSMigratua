@@ -7,18 +7,12 @@ setInterval(counter, 10000);
 function counter(){
     $.ajax({
         method: 'GET',
-        url: '../json/Questions.json',
+        url: '../xml/UserCounter.xml',
+        dataType: 'xml',
         cache: false,
         success: function (data) {
-            var eposta = $("#frmeposta").val();
-            var galderaKop = data.assessmentItems.length;
-            var erabiltzaileGalderaKop = 0;
-            $.each (data.assessmentItems, function(i,item){
-                if (eposta == item.author) {
-                    erabiltzaileGalderaKop++; 
-                }
-            });
-            $("#galderaKop").html(erabiltzaileGalderaKop + "/" + galderaKop);
+            console.log(data);
+            $("#userKop").html(data.getElementsByTagName('n')[0].childNodes[0].nodeValue);
         },
     });
 }

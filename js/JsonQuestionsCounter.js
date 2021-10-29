@@ -8,6 +8,7 @@ function counter(){
     $.ajax({
         method: 'GET',
         url: '../json/Questions.json',
+        dataType: 'json',
         cache: false,
         success: function (data) {
             var eposta = $("#frmeposta").val();

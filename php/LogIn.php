@@ -35,6 +35,7 @@
                 $ema = $nireSQLI->query("SELECT eposta, pasahitza, irudia_dir FROM erabiltzaileak WHERE eposta = '".$_POST["eposta"]."'");
                 if (($tabladatuak = $ema->fetch_row()) != null) {
                     if ($datuak["eposta"] == $tabladatuak[0] && $datuak["pasahitza"]==$tabladatuak[1]) {
+                        include 'IncreaseGlobalCounter.php';
                         echo '<script> alert("Logeatu egin zara, '.$tabladatuak["eposta"].'") </script>';
                         header("location: Layout.php?eposta=".$tabladatuak[0]."&irudia=".$tabladatuak[2]);
                     } else {
