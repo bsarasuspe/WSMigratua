@@ -30,7 +30,7 @@
                         }
 
                         $ema = $nireSQLI->query("SELECT eposta, galdera, eZuzen, eOker1, eOker2, eOker3, zailtasuna, gaia, argazkia
-                            FROM Questions");
+                            FROM questions");
 
                         for ($x = 0; $x < $ema->num_rows; $x++){
                             $ema->data_seek($x);

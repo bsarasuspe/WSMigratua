@@ -92,4 +92,17 @@
       <response>ajaaa</response>
     </incorrectResponses>
   </assessmentItem>
+  <assessmentItem author="bsarasua001@ikasle.ehu.eus" subject="aa">
+    <itemBody>
+      <p>ajd&#xF1;lfaj&#xF1;l????</p>
+    </itemBody>
+    <correctResponse>
+      <response>jl&#xF1;asd</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>aaa</response>
+      <response>aa</response>
+      <response>aa</response>
+    </incorrectResponses>
+  </assessmentItem>
 </assessmentItems>

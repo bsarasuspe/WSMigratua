@@ -4,7 +4,7 @@
     <?php include '../html/Head.html'?>
 </head>
 <body style="background-color:white;">
-        <table style="width:700px" border="1px">
+        <table style="width:700px" border="1px" bgcolor="white">
             <thead>
             <th>Egilea</th>
             <th>Enuntziatua</th>

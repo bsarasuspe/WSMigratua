@@ -118,6 +118,23 @@
                     "ajaaa"
                 ]
             }
+        },
+        {
+            "subject": "aa",
+            "author": "bsarasua001@ikasle.ehu.eus",
+            "itemBody": {
+                "p": "ajd\u00f1lfaj\u00f1l????"
+            },
+            "correctResponse": {
+                "response": "jl\u00f1asd"
+            },
+            "incorrectResponses": {
+                "response": [
+                    "aaa",
+                    "aa",
+                    "aa"
+                ]
+            }
         }
     ]
 }

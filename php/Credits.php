@@ -27,7 +27,6 @@
             <h4>Zalla</h4>
         </div>
 
-
     </div>
   </section>
   <?php include '../html/Footer.html' ?>

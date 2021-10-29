@@ -9,12 +9,21 @@
     <script src="../js/ValidateFieldsQuestionJQ.js"></script>
     <script src="../js/ShowQuestionsAjax.js"></script>
     <script src="../js/AddQuestionAjax.js"></script>
+    <script src="../js/JsonQuestionsCounter.js"></script>
 </head>
 
 <body>
     <?php include '../php/Menus.php' ?>
     <section class="main" id="s1">
         <div id="galdetegia">
+            <div>
+                <b>Nire galderak / galderak guztira</b>
+                <div id="galderaKop" style="border:1px solid black; width:300px; margin:auto;"></div>
+            </div>
+            <div>
+                <b>Kautotutako erabiltzaile kopurua</b>
+                <div id="galderaKop" style="border:1px solid black; width:300px; margin:auto;"></div>
+            </div><br>
             <?php
             $parametroak = "";
             if (isset($_GET['eposta'])) {
