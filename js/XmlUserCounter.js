@@ -1,10 +1,10 @@
 $(document).ready(function () {
-	counter();
+	userCounter();
 });
 
-setInterval(counter, 10000);
+setInterval(userCounter, 10000);
 
-function counter(){
+function userCounter(){
     $.ajax({
         method: 'GET',
         url: '../xml/UserCounter.xml',

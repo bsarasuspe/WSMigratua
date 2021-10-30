@@ -10,6 +10,7 @@
     <script src="../js/ShowQuestionsAjax.js"></script>
     <script src="../js/AddQuestionAjax.js"></script>
     <script src="../js/JsonQuestionsCounter.js"></script>
+    <script src="../js/XmlUserCounter.js"></script>
 </head>
 
 <body>

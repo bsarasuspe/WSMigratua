@@ -1,10 +1,10 @@
 $(document).ready(function () {
-	counter();
+	questionCounter();
 });
 
-setInterval(counter, 10000);
+setInterval(questionCounter, 10000);
 
-function counter(){
+function questionCounter(){
     $.ajax({
         method: 'GET',
         url: '../json/Questions.json',
