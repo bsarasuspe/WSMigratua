@@ -22,7 +22,7 @@
                 else if ($_SERVER['REQUEST_METHOD'] == 'POST') $aldagaiak = $_POST;
                 else die("Konekzioa egitean datuak ezin izan dira lortu");
 
-                $sqlInsertQuestion = "INSERT INTO questions(eposta, galdera, eZuzen, eOker1, eOker2, eOker3, zailtasuna, gaia) 
+                $sqlInsertQuestion = "INSERT INTO Questions(eposta, galdera, eZuzen, eOker1, eOker2, eOker3, zailtasuna, gaia) 
                 VALUES ('$aldagaiak[frmeposta]', '$aldagaiak[frmgalderatxt]', '$aldagaiak[frmerantzunzuzena]', '$aldagaiak[frmerantzunokerra1]', '$aldagaiak[frmerantzunokerra2]', '$aldagaiak[frmerantzunokerra3]', '$aldagaiak[frmzailtasuna]', '$aldagaiak[frmgaiarloa]')";
                 if (!$nireSQLI->query($sqlInsertQuestion)) {
                     return '<b style="color: red">Errorea: '.$nireSQLI->error."</b>
