@@ -1,5 +1,5 @@
 <?php
-    if (isset($eposta)){
+    if (isset($_POST['eposta'])){
         $soapclient = new SoapClient('http://ehusw.es/rosa/webZerbitzuak/egiaztatuMatrikula.php?wsdl');
         $result = $soapclient->egiaztatuE($eposta);
         if ($result == "EZ"){

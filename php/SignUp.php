@@ -23,8 +23,7 @@
             return 'Bi pasahitzak ez dira berdinak';
         }
         $result = include "ClientVerifyEnrollment.php";
-        return $result;
-        
+        return $result;    
     }
     ?>
     
