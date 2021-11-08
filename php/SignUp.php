@@ -22,7 +22,9 @@
         else if ($datuak["pasahitza"] != $datuak["pasahitzaErr"]){
             return 'Bi pasahitzak ez dira berdinak';
         }
-        return '';
+        $result = include "ClientVerifyEnrollment.php";
+        return $result;
+        
     }
     ?>
     
