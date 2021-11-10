@@ -5,7 +5,7 @@
 	DEFINE("_USERNAME_", "root");
 	DEFINE("_DATABASE_", "quiz");
 	DEFINE("_PASSWORD_", "");
-	require_once 'database.php';
+	require_once 'Database.php';
 
 	$method = $_SERVER['REQUEST_METHOD'];
 	$resource = $_SERVER['REQUEST_URI'];
@@ -14,12 +14,23 @@
 		$cnx = Database::Konektatu();
 		switch ($method) {
 		case 'GET': // GET eskaera bat tratatzeko kodea
-			$sql = "SELECT * FROM vip";
-			$data = Database::GauzatuKontsulta($cnx, $sql);
-			if (isset($data[0])){
-				echo json_encode($data[0]);
-			}else {
-				echo "Ez dago VIP erabiltzailerik.";
+			if (isset($_POST['eposta'])){
+				$arguments = $_POST;
+				$sql = "SELECT * FROM vip WHERE eposta=$arguments[eposta];";
+				$data = Database::GauzatuKontsulta($cnx, $sql);
+				if (($data->num_rows) > 0){
+					echo "Erabiltzailea VIP da.";
+				}else{
+					echo "Erabiltzailea ez da VIP.";
+				}
+			}else{
+				$sql = "SELECT * FROM vip";
+				$data = Database::GauzatuKontsulta($cnx, $sql);
+				if (isset($data[0])){
+					echo json_encode($data[0]);
+				}else {
+					echo "Ez dago VIP erabiltzailerik.";
+				}
 			}
 			break;
 		case 'POST': // idem POST
@@ -28,7 +39,7 @@
 			$eposta = $arguments['eposta'];
 			$sql = "INSERT INTO vip(eposta) VALUES ('$eposta');";
 			$num=Database::GauzatuEzKontsulta($cnx, $sql);
-			if ($num==0){
+			if ($num == 0){
 				echo json_encode(array('VIP da dagoeneko.' => $eposta));
 			}else {
 				echo json_encode(array('VIP sortua' => $eposta));
