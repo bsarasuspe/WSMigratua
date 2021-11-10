@@ -14,22 +14,21 @@
 		$cnx = Database::Konektatu();
 		switch ($method) {
 		case 'GET': // GET eskaera bat tratatzeko kodea
-			if (isset($_POST['eposta'])){
-				$arguments = $_POST;
-				$sql = "SELECT * FROM vip WHERE eposta=$arguments[eposta];";
+			if (isset($_GET['eposta'])){
+				$arguments = $_GET;
+				$eposta = $arguments['eposta'];
+				$sql = "SELECT * FROM vip WHERE eposta = '$eposta'";
 				$data = Database::GauzatuKontsulta($cnx, $sql);
 				if (($data->num_rows) > 0){
-					echo "Erabiltzailea VIP da.";
+					echo "$eposta erabiltzailea VIPa da.";
 				}else{
-					echo "Erabiltzailea ez da VIP.";
+					echo "$eposta erabiltzailea ez da VIPa.";
 				}
 			}else{
 				$sql = "SELECT * FROM vip";
 				$data = Database::GauzatuKontsulta($cnx, $sql);
-				if (isset($data[0])){
-					echo json_encode($data[0]);
-				}else {
-					echo "Ez dago VIP erabiltzailerik.";
+				while ($fila = $data->fetch_assoc()){
+					echo "$fila[eposta]<br>";
 				}
 			}
 			break;
@@ -48,7 +47,7 @@
 		case 'DELETE': //idel DELETE
 			$arguments = $_REQUEST;
 			$eposta=$arguments['eposta'];
-			$sql = "DELETE FROM vip WHERE eposta = $eposta;";
+			$sql = "DELETE FROM vip WHERE eposta = '$eposta'";
 			$result = Database::GauzatuEzKontsulta($cnx, $sql);
 			if ($result == 0){
 				echo json_encode(array('Ez dago helbide elektronikoa' => $eposta));

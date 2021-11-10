@@ -19,7 +19,7 @@
 			}
 		}
 		public static function Deskonektatu($link) {
-			mysql_close($link);
+			$link->close();
 		}
 	}
 ?>

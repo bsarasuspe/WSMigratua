@@ -16,23 +16,21 @@
 
                 <!-- Eposta igorri -->
                 <input type="submit" name="submit" id="submit" value="VIPa da?"><br>
-            </form>
-
-    </div>
-  </section>
-  <?php include '../html/Footer.html' ?>
-</body>
-</html>
+            </form><br>
 
 <?php
     if (isset($_POST['eposta'])){
         $curl = curl_init();
         $eposta = $_POST['eposta'];
-        $url = "http://localhost/WSMigratua/rest/VipUsers/".$eposta;
-        echo ($url);
+        $url = "http://localhost/WSMIG/WSMigratua/rest/VipUsers/".$eposta;
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         $str = curl_exec($curl);
         echo $str; 
     }
 ?>
+    </div>
+  </section>
+  <?php include '../html/Footer.html' ?>
+</body>
+</html>

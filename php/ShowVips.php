@@ -8,8 +8,15 @@
   <section class="main" id="s1">
     <div>
 
-      <h2>Ikusi VIP erabiltzaileak</h2>
-	  
+      <h3>Ikusi VIP erabiltzaileak</h3><br>
+	<?php
+        $curl = curl_init();
+        $url = "http://localhost/WSMIG/WSMigratua/rest/VipUsers/";
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        $str = curl_exec($curl);
+        echo $str; 
+	?>
     </div>
   </section>
   <?php include '../html/Footer.html' ?>
