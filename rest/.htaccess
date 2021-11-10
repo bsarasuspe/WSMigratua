@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteRule erabiltzaileak/(.+) erabiltzaileak.php?id=$1
+RewriteRule ezabatuerabiltzaileak/(.+) erabiltzaileak.php?id=$1
+RewriteRule erabiltzaileak/ erabiltzaileak.php
