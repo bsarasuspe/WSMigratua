@@ -22,7 +22,7 @@
     if (isset($_POST['eposta'])){
         $curl = curl_init();
         $eposta = $_POST['eposta'];
-        $url = "http://localhost/WSMIG/WSMigratua/rest/VipUsers/".$eposta;
+        $url = "https://sw.ikasten.io/~T52/rest/VipUsers/".$eposta;
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         $str = curl_exec($curl);

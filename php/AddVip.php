@@ -21,7 +21,7 @@
     if (isset($_POST['eposta'])){
       $ch = curl_init();
       $eposta = $_POST['eposta'];
-      curl_setopt($ch, CURLOPT_URL, "http://localhost/WSMIG/WSMigratua/rest/VipUsers/");
+      curl_setopt($ch, CURLOPT_URL, "https://sw.ikasten.io/~T52/rest/VipUsers/");
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($ch, CURLOPT_POST, true);
       $data = array(
