@@ -32,12 +32,12 @@
                     die("DB-ra konexio bat egitean errore bat egon da: " . $nireSQLI->connect_error);
                 }
 
-                $ema = $nireSQLI->query("SELECT eposta, pasahitza, irudia_dir FROM Erabiltzaileak WHERE eposta = '".$_POST["eposta"]."'");
+                $ema = $nireSQLI->query("SELECT eposta, pasahitza, irudia_dir, mota FROM Erabiltzaileak WHERE eposta = '".$_POST["eposta"]."'");
                 if (($tabladatuak = $ema->fetch_row()) != null) {
                     if ($datuak["eposta"] == $tabladatuak[0] && $datuak["pasahitza"]==$tabladatuak[1]) {
                         include 'IncreaseGlobalCounter.php';
                         echo '<script> alert("Logeatu egin zara, '.$tabladatuak["eposta"].'") </script>';
-                        header("location: Layout.php?eposta=".$tabladatuak[0]."&irudia=".$tabladatuak[2]);
+                        header("location: Layout.php?eposta=".$tabladatuak[0]."&irudia=".$tabladatuak[2]."&mota=".$tabladatuak[3]);
                     } else {
                         echo '<p style="color: red"> Zure erabiltzailea edo pasahitza ez dira zuzenak. </p>';
                     }

@@ -31,6 +31,7 @@
     if (isset($_GET['eposta'])) {
         $parametroak = "?eposta=".$_GET['eposta'];
         $parametroak = $parametroak."&irudia=".$_GET['irudia'];
+        $parametroak = $parametroak."&mota=".$_GET['mota'];
     }
 
     echo '<span><a href="Layout.php'.$parametroak.'">Hasiera</a></span>';
@@ -42,5 +43,14 @@
         echo '<span><a href="ShowJsonQuestions.php'.$parametroak.'">Galderak (JSON)</a></span>';
     }
     echo '<span><a href="Credits.php'.$parametroak.'">Kredituak</a></span>';
+    if (isset($_GET['mota'])){
+        $mota = $_GET['mota'];
+        if ($mota == '2'){
+            echo '<span><a href="IsVip.php'.$parametroak.'">VIPa da?</a></span>';
+            echo '<span><a href="AddVip.php'.$parametroak.'">Gehitu VIPa</a></span>';
+            echo '<span><a href="DeleteVip.php'.$parametroak.'">Ezabatu VIPa</a></span>';
+            echo '<span><a href="ShowVips.php'.$parametroak.'">Ikusi VIPak</a></span>';
+        }
+    }
     ?>
 </nav>

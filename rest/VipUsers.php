@@ -47,13 +47,15 @@
 		case 'DELETE': //idel DELETE
 			$arguments = $_REQUEST;
 			$eposta=$arguments['eposta'];
-			$sql = "DELETE FROM vip WHERE eposta = '$eposta'";
-			$result = Database::GauzatuEzKontsulta($cnx, $sql);
-			if ($result == 0){
-				echo json_encode(array('Ez dago helbide elektronikoa' => $eposta));
-			} else {
-				echo json_encode(array('Row deleted' => $eposta));
-			}
+			$sql = "SELECT * FROM vip WHERE eposta = '$eposta'";
+			$data = Database::GauzatuKontsulta($cnx, $sql);
+			if (($data->num_rows) > 0){
+					$sql = "DELETE FROM vip WHERE eposta = '$eposta'";
+					$result = Database::GauzatuEzKontsulta($cnx, $sql);
+					echo json_encode(array('Row deleted' => $eposta));
+				}else{
+					echo json_encode(array('Ez dago helbide elektronikoa' => $eposta));
+				}
 			break;
 	}
 
