@@ -6,7 +6,7 @@
         $parametroak = "?eposta=".$_GET['eposta'];
         $parametroak = $parametroak."&irudia=".$_GET['irudia'];
     }
-
+ 
     if (isset($_GET['eposta'])) {
         echo '<span class="right"><a href="LogOut.php'.$parametroak.'">Logout</a></span> &nbsp;';
         echo $_GET['eposta'].'&nbsp;';

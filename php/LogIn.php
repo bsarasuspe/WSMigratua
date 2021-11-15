@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
     <?php include '../html/Head.html'?>
     <?php include 'DbConfig.php'?>
 </head>

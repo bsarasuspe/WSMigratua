@@ -11,4 +11,4 @@
     ?>
     window.location.replace("Layout.php");
 </script>
-</html>
+ </html>
