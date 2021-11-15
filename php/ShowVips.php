@@ -16,6 +16,7 @@
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         $str = curl_exec($curl);
         echo $str; 
+        curl_close($curl);
 	?>
     </div>
   </section>
