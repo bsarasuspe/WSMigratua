@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head> 
+
     <?php include '../html/Head.html'?>
     <?php include 'DbConfig.php'?>
 </head>
 <body>
     <?php include '../php/Menus.php' ?>
+    <?php
+        if (isset($_SESSION["kautotua"]) && $_SESSION["kautotua"] == "BAI") {
+            echo "<script> window.location.href = 'Layout.php';</script>";
+            exit();
+        }
+    ?>
     <section class="main" id="s1" style="display: flex">
         <div>
             <form id="loginF" name="loginF" method="post">
@@ -36,8 +43,18 @@
                 if (($tabladatuak = $ema->fetch_row()) != null) {
                     if ($datuak["eposta"] == $tabladatuak[0] && $datuak["pasahitza"]==$tabladatuak[1]) {
                         include 'IncreaseGlobalCounter.php';
+                        $_SESSION["kautotua"]= "BAI";
+                        $_SESSION["eposta"] = $tabladatuak[0];
+                        $_SESSION["irudia"] = $tabladatuak[2];
+                        $_SESSION["mota"] = $tabladatuak[3];
                         echo '<script> alert("Logeatu egin zara, '.$tabladatuak["eposta"].'") </script>';
-                        header("location: Layout.php?eposta=".$tabladatuak[0]."&irudia=".$tabladatuak[2]."&mota=".$tabladatuak[3]);
+                        if($_SESSION["mota"] == 1){
+                            header("location: HandlingQuizesAjax.php");
+                        }else if($_SESSION["mota"] == 2){
+                            header("location: Layout.php");
+                        }else{
+                            header("location: Layout.php");
+                        }
                     } else {
                         echo '<p style="color: red"> Zure erabiltzailea edo pasahitza ez dira zuzenak. </p>';
                     }

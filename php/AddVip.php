@@ -5,9 +5,14 @@
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
+  <?php
+        if (($_SESSION["kautotua"] != "BAI") || ($_SESSION["mota"] != 2)) {
+          echo "<script> window.location.href = 'Layout.php';</script>";
+            exit();
+        }
+    ?>
   <section class="main" id="s1">
     <div>
-
       <h3>Gehitu VIP erabiltzailea</h3><br>
       <form id="form" name="form" method="post">
                 <!-- Eposta -->

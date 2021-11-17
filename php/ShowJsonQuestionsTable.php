@@ -3,6 +3,13 @@
 <head>
     <?php include '../html/Head.html'?>
 </head>
+<?php
+        session_start();
+        if (($_SESSION["kautotua"] != "BAI") || ($_SESSION["mota"] == "3")) {
+            echo "<script> window.location.href = 'Layout.php';</script>";
+            exit();
+        }
+    ?>
 <body style="background-color:white;">
         <table style="width:700px" border="1px" bgcolor="white">
             <thead>
