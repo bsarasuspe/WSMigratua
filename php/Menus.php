@@ -37,6 +37,9 @@
         echo '<span><a href="DeleteVip.php">Ezabatu VIPa</a></span>';
         echo '<span><a href="ShowVips.php">Ikusi VIPak</a></span>';
     }
+    if (isset($_SESSION['kautotua']) && ($_SESSION['kautotua']) == "BAI" && ($_SESSION['mota']) == "3"){
+        echo '<span><a href="HandlingAccounts.php">Erabiltzaileak kudeatu</a></span>';
+    }
     echo '<span><a href="Credits.php">Kredituak</a></span>';
     ?>
 </nav>
