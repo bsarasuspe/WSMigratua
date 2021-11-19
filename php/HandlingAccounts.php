@@ -18,7 +18,7 @@
       <h2>Erabiltzaileak kudeatu</h2>
       <br>
         <center>
-      <table style="width:700px" border="1px" bgcolor="white">
+      <table style="width:700px" border="1px" bgcolor="#f4f4f4">
             <thead>
                 <th>Eposta</th>
                 <th>Gakoa</th>

@@ -40,8 +40,9 @@
                 }
 
                 $ema = $nireSQLI->query("SELECT eposta, pasahitza, irudia_dir, mota FROM Erabiltzaileak WHERE eposta = '".$_POST["eposta"]."' AND blokeatuta = 0");
+
                 if (($tabladatuak = $ema->fetch_row()) != null) {
-                    if ($datuak["eposta"] == $tabladatuak[0] && $datuak["pasahitza"]==$tabladatuak[1]) {
+                    if ($datuak["eposta"] == $tabladatuak[0] && hash_equals($tabladatuak[1], crypt($datuak["pasahitza"], $tabladatuak[1]))) {
                         include 'IncreaseGlobalCounter.php';
                         $_SESSION["kautotua"]= "BAI";
                         $_SESSION["eposta"] = $tabladatuak[0];

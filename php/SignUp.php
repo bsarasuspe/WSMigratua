@@ -108,8 +108,10 @@ if (isset($_POST['eposta'])) {
         $irudia = addslashes(file_get_contents($irudiaIzen));
     }
 
+    $encrypted_pwd = crypt($_POST["pasahitza"]);
+
     $sqlInsertQuestion = "INSERT INTO Erabiltzaileak(eposta, mota, deitura, pasahitza, irudia, irudia_dir) 
-                            VALUES ('$_POST[eposta]', '$_POST[erabiltzailemota]', '$_POST[deitura]', '$_POST[pasahitza]', '$irudia', '$dir')";
+                            VALUES ('$_POST[eposta]', '$_POST[erabiltzailemota]', '$_POST[deitura]', '$encrypted_pwd', '$irudia', '$dir')";
 
     if (!$nireSQLI->query($sqlInsertQuestion)) {
         $mezua = str_replace("'", "\'", $nireSQLI->error);
