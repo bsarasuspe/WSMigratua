@@ -46,16 +46,35 @@
                         echo "<td>" . $datuak['eposta'] . "</td>";
                         echo "<td>" . $datuak['pasahitza'] . "</td>";
                         echo "<td>" . $datuak['mota'] . "</td>";
-                        echo "<td>" . $datuak['irudia_dir'] . "</td>";
-                        echo "<td> <center><button id='permutatu'>ON</button></center> </td>";
-                        echo "<td> <center><button id='ezabatu'>Ezabatu</button></center>  </td>";
+                        if(isset($datuak['irudia_dir']) && file_exists($datuak['irudia_dir'])){
+                          echo "<td> <img src='../images/$datuak[irudia_dir]' height=50 width=50/></td>";
+                        }else{
+                          echo "<td> <img src='../images/default_erabiltzailea.png' height=50 width=50/></td>";
+                        }
+                        if(isset($datuak['blokeatuta']) && $datuak['blokeatuta'] == 0){
+                          echo "<td> <center><form id='blokeatu' name='blokeatu' method='post' action='ChangeUserState.php'>
+                          <input id='eposta' name='eposta' type='hidden' value='$datuak[eposta]'>
+                          <input id='blokeatuta' name='blokeatuta' type='hidden' value='false'>
+                          <button type='submit' id='permutatu')'>OFF</button>
+                          </form></center> </td>";
+                        }else if(isset($datuak['blokeatuta'])){
+                          echo "<td> <center><form id='desblokeatu' name='desblokeatu' method='post' action='ChangeUserState.php'>
+                          <input id='eposta' name='eposta' type='hidden' value='$datuak[eposta]'>
+                          <input id='blokeatuta' name='blokeatuta' type='hidden' value='true'>
+                          <button type='submit' id='permutatu')'>ON</button>
+                          </form></center> </td>";
+                        }
+                        echo "<td> <center><form id='borratu' name='borratu' method='post' action='RemoveUser.php'>
+                        <input id='eposta' name='eposta' type='hidden' value='$datuak[eposta]'>
+                        <button type='submit' id='ezabatu')'>Ezabatu</button>
+                        </form></center>  </td>";
                         echo "</tr>";
                     }
                 }
             ?>
             </tbody>
         </table>
-            </center>
+          </center>
     </div>
   </section>
   <?php include '../html/Footer.html' ?>
