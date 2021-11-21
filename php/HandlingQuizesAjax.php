@@ -15,6 +15,12 @@
 
 <body>
     <?php include '../php/Menus.php' ?>
+    <?php
+        if (($_SESSION["kautotua"] != "BAI") || ($_SESSION["mota"] == "3")) {
+            echo "<script> window.location.href = 'Layout.php';</script>";
+            exit();
+        }
+    ?>
     <section class="main" id="s1">
         <div id="galdetegia">
             <div>

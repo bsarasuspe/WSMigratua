@@ -5,6 +5,12 @@
 </head>
 <body>
 <?php include '../php/Menus.php' ?>
+<?php
+        if ($_SESSION["kautotua"] != "BAI") {
+            header("Location: layout.php");
+            exit();
+        }
+    ?>
 <section class="main" id="s1" style="display: flex">
     <div style="overflow-y: scroll; overflow-x: scroll">
         <table style="width:100%">

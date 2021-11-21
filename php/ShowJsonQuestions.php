@@ -5,6 +5,12 @@
 </head>
 <body>
 <?php include '../php/Menus.php' ?>
+<?php
+        if (($_SESSION["kautotua"] != "BAI") || ($_SESSION["mota"] == "3")) {
+            echo "<script> window.location.href = 'Layout.php';</script>";
+            exit();
+        }
+    ?>
 <section class="main" id="s1" style="display: flex">
     <div style="overflow-y: scroll; overflow-x: scroll">
         <table style="width:100%">
