@@ -32,6 +32,7 @@
     <?php include '../php/Menus.php' ?>
 
     <section class="main" id="SingUp">
+    <h2>Erregistratu</h2><br>
         <div>
             <form id="singupF" name="singupF" method="post" onreset="hide_image()"
                   enctype="multipart/form-data">
@@ -63,6 +64,7 @@
                 <!-- Irudia -->
                 <label>Irudia:</label>
                 <input type="file" accept="image/*" name="irudia" id="irudia" onchange="show_image(this, 'reset')"><br>
+                <br>
 
                 <!-- Hustu -->
                 <input type="reset" name="reset" id="reset"  value="Hustu">
@@ -94,8 +96,15 @@ if (isset($_POST['eposta'])) {
         }
     }
 
-    global $zerbitzaria, $erabiltzailea, $gakoa, $db;
-    $nireSQLI = new mysqli($zerbitzaria, $erabiltzailea, $gakoa, $db);
+    try {
+        $dsn = "mysql:host=localhost;dbname=$db";
+        $dbh = new PDO($dsn, $erabiltzailea, $gakoa);
+        } catch (PDOException $e){
+        echo $e->getMessage();
+    }
+
+    /*global $zerbitzaria, $erabiltzailea, $gakoa, $db;
+    $nireSQLI = new mysqli($zerbitzaria, $erabiltzailea, $gakoa, $db);*/
 
     if($nireSQLI->connect_error) {
         echo "<script> alert('DB-ra konexio bat egitean errore bat egon da. Berriro saiatu.')";
@@ -110,14 +119,29 @@ if (isset($_POST['eposta'])) {
 
     $encrypted_pwd = crypt($_POST["pasahitza"]);
 
-    $sqlInsertQuestion = "INSERT INTO Erabiltzaileak(eposta, mota, deitura, pasahitza, irudia, irudia_dir) 
+    $stmt = $dbh->prepare("INSERT INTO Erabiltzaileak(eposta, mota, deitura, pasahitza, irudia, irudia_dir) VALUES (?, ?, ?, ?, ?, ?)"); 
+
+    $eposta = $_POST["eposta"];
+    $erabiltzailemota = $_POST["erabiltzailemota"];
+    $deitura = $_POST["deitura"];
+    $stmt->bindParam(1, $eposta);
+    $stmt->bindParam(2, $erabiltzailemota);
+    $stmt->bindParam(3, $deitura);
+    $stmt->bindParam(4, $encrypted_pwd);
+    $stmt->bindParam(5, $irudia);
+    $stmt->bindParam(6, $dir);
+
+    $stmt->execute();
+
+    /*$sqlInsertQuestion = "INSERT INTO Erabiltzaileak(eposta, mota, deitura, pasahitza, irudia, irudia_dir) 
                             VALUES ('$_POST[eposta]', '$_POST[erabiltzailemota]', '$_POST[deitura]', '$encrypted_pwd', '$irudia', '$dir')";
 
     if (!$nireSQLI->query($sqlInsertQuestion)) {
         $mezua = str_replace("'", "\'", $nireSQLI->error);
         echo "<script>alert('Errorea datu-basean: $mezua')</script>";
         return;
-    }
+    }*/
+
     header("location: Layout.php");
 }
 ?>

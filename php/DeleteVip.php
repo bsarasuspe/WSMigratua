@@ -20,7 +20,7 @@
                 <input type="text" id="eposta" name="eposta"><br><br>
 
                 <!-- Eposta igorri -->
-                <input type="submit" name="submit" id="submit" value="VIPa bihurtu"><br>
+                <input type="submit" name="submit" id="submit" value="VIPa ezabatu"><br>
             </form><br>
 
       <?php

@@ -6,6 +6,7 @@
     <?php include 'DbConfig.php'?>
 </head>
 <body>
+
     <?php include '../php/Menus.php' ?>
     <?php
         if (isset($_SESSION["kautotua"]) && $_SESSION["kautotua"] == "BAI") {
@@ -13,7 +14,8 @@
             exit();
         }
     ?>
-    <section class="main" id="s1" style="display: flex">
+    <section class="main" id="s1">
+    <h2>Login</h2><br>
         <div>
             <form id="loginF" name="loginF" method="post">
                 <!-- Eposta -->
@@ -23,7 +25,8 @@
                 <!-- Pasahitza -->
                 <label for="pasahitza">Pasahitza (*):</label>
                 <input type="password" id="pasahitza" name="pasahitza"><br>
-
+                <br>
+                
                 <!-- Galdera igorri -->
                 <input type="submit" name="submit" id="submit" value="Logeatu"><br>
             </form>
@@ -31,23 +34,40 @@
             
             if (!empty($_POST)){
                 $datuak = $_POST;
-                global $zerbitzaria, $erabiltzailea, $gakoa, $db;
-                
+                try {
+                    $dsn = "mysql:host=localhost;dbname=$db";
+                    $dbh = new PDO($dsn, $erabiltzailea, $gakoa);
+                    } catch (PDOException $e){
+                    echo $e->getMessage();
+                }
+            
+                /*global $zerbitzaria, $erabiltzailea, $gakoa, $db;
                 $nireSQLI = new mysqli($zerbitzaria, $erabiltzailea, $gakoa, $db);
 
                 if($nireSQLI->connect_error) {
                     die("DB-ra konexio bat egitean errore bat egon da: " . $nireSQLI->connect_error);
-                }
+                }*/
 
-                $ema = $nireSQLI->query("SELECT eposta, pasahitza, irudia_dir, mota FROM Erabiltzaileak WHERE eposta = '".$_POST["eposta"]."' AND blokeatuta = 0");
+                $stmt = $dbh->prepare("SELECT eposta, pasahitza, irudia_dir, mota FROM Erabiltzaileak WHERE eposta = ? AND blokeatuta = ?"); 
 
-                if (($tabladatuak = $ema->fetch_row()) != null) {
-                    if ($datuak["eposta"] == $tabladatuak[0] && hash_equals($tabladatuak[1], crypt($datuak["pasahitza"], $tabladatuak[1]))) {
+                $eposta = $_POST["eposta"];
+                $blokeatuta = 0;
+                $stmt->bindParam(1, $eposta);
+                $stmt->bindParam(2, $blokeatuta);
+
+                $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+
+                $stmt->execute();
+
+                //$ema = $nireSQLI->query("SELECT eposta, pasahitza, irudia_dir, mota FROM Erabiltzaileak WHERE eposta = '".$_POST["eposta"]."' AND blokeatuta = 0");
+
+                if (($tabladatuak = $stmt->fetch()) != null) {
+                    if ($datuak["eposta"] == $tabladatuak["eposta"] && hash_equals($tabladatuak["pasahitza"], crypt($datuak["pasahitza"], $tabladatuak["pasahitza"]))) {
                         include 'IncreaseGlobalCounter.php';
                         $_SESSION["kautotua"]= "BAI";
-                        $_SESSION["eposta"] = $tabladatuak[0];
-                        $_SESSION["irudia"] = $tabladatuak[2];
-                        $_SESSION["mota"] = $tabladatuak[3];
+                        $_SESSION["eposta"] = $tabladatuak["eposta"];
+                        $_SESSION["irudia"] = $tabladatuak["irudia_dir"];
+                        $_SESSION["mota"] = $tabladatuak["mota"];
                         echo '<script> alert("Logeatu egin zara, '.$tabladatuak["eposta"].'") </script>';
                         if($_SESSION["mota"] == 1){
                             header("location: HandlingQuizesAjax.php");

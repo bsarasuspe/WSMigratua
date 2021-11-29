@@ -45,8 +45,8 @@
                 <label for="frmeposta">Eposta (*):</label>
                 <?php
                 $eposta = "";
-                if (isset($_GET['eposta'])) {
-                    $eposta = $_GET['eposta'];
+                if (isset($_SESSION['eposta'])) {
+                    $eposta = $_SESSION['eposta'];
                     echo '<input type="text" id="frmeposta" name="frmeposta" value="'.$eposta.'" readonly="readonly">';
                 } else {
                     echo '<input type="text" id="frmeposta" name="frmeposta" placeholder="EHU eposta">';
@@ -97,7 +97,7 @@
                 <input type="reset" name="reset" id="reset"  value="Hustu">
 
                 <!-- Galdera igorri -->
-                <input type="button" name="addquestion" form="galdetegia" id="addquestion" onclick="AddQuestionAjax()" value="Galdera igorri">
+                <input type="button" name="submit" form="galdetegia" id="submit" onclick="AddQuestionAjax()" value="Galdera igorri">
 
                 <!-- Galderak erakutsi -->
                 <input type="button" name="showquestions" form="galdetegia" id="showquestions" onclick="ShowQuestionsAjax()" value="Ikusi JSON galderak">
