@@ -26,7 +26,7 @@
         $row= mysqli_fetch_array($query);
         if($row['expDate'] >= $curDate){
             echo '<form action="" method="post">
-            <input type="hidden" name="email" value="<?php echo $email;?>">
+            <input type="hidden" name="email" value="<?php echo $eposta;?>">
             <input type="hidden" name="reset_link_token" value="<?php echo $token;?>">
             <div class="form-group">
             <label for="exampleInputEmail1">Pasahitza berria: </label>
@@ -48,19 +48,28 @@
         ?>
 
         <?php
+        error_reporting(0);
         if(isset($_POST['password']) && $_POST['reset_link_token'] && $_POST['email'])
         {
-            $emailId = $_POST['email'];
-            $token = $_POST['reset_link_token'];
-            $password = md5($_POST['password']);
-            $query = mysqli_query($nireSQLI,"SELECT * FROM Erabiltzaileak WHERE token='".$token."' and eposta='".$email."';");
-            $row = mysqli_num_rows($query);
-            if($row){
-                mysqli_query($nireSQLI,"UPDATE Erabiltzaileak SET pasahitza='" . $password . "', token='" . NULL . "', expDate='" . NULL . "' WHERE eposta='" . $emailId . "'");
-                echo '<br><p style="color:green">Zure pasahitza ongi berrezarri da.</p>';
+            if($_POST['password'] == $_POST['cpassword']){
+                if(strlen($_POST['password'])>=8){
+                    $eposta = $_GET['key'];
+                    $token = $_POST['reset_link_token'];
+                    $password = crypt($_POST['password']);
+                    $sql = "UPDATE Erabiltzaileak SET pasahitza='" . $password . "', token='" . NULL . "' , expDate='" . NULL . "' WHERE eposta='" . $eposta . "'";
+                    if (!$nireSQLI->query($sql)) {
+                        $mezua = str_replace("'", "\'", $nireSQLI->error);
+                        echo "<script>alert('Errorea datu-basean: $mezua')</script>";
+                        return;
+                    }
+                    echo '<br><p style="color:green">Zure pasahitza ongi berrezarri da.</p>';
+                }else{
+                    echo '<br><p style="color:red">Pasahitzak 8 karaktere baino gehiago izan behar ditu.</p>';
+                }
             }else{
-                echo '<br><p style="color:red">Zerbait gaizki joan da, saiatu berriro.</p>';
+                echo '<br><p style="color:red">Pasahitzak ez dira berdinak.</p>';
             }
+            
         }
         ?>
     </div>

@@ -53,7 +53,7 @@ if(isset($_POST['password-reset-token']) && $_POST['email'])
  
     $update = mysqli_query($nireSQLI,"UPDATE Erabiltzaileak set token='" . $token . "' ,expDate='" . $expDate . "' WHERE eposta='" . $eposta . "'");
  
-    $link = "<a href='localhost/WSMigratua/php/ResetPassword.php?key=".$eposta."&token=".$token."'>aldatu pasahitza</a>";
+    $link = "<a href='localhost/WSMIG/WSMigratua/php/ResetPassword.php?key=".$eposta."&token=".$token."'>aldatu pasahitza</a>";
  
     $mail = new PHPMailer();
     
