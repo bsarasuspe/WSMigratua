@@ -50,17 +50,17 @@
         <?php
         if(isset($_POST['password']) && $_POST['reset_link_token'] && $_POST['email'])
         {
-        $emailId = $_POST['email'];
-        $token = $_POST['reset_link_token'];
-        $password = md5($_POST['password']);
-        $query = mysqli_query($nireSQLI,"SELECT * FROM Erabiltzaileak WHERE token='".$token."' and eposta='".$emailId."'");
-        $row = mysqli_num_rows($query);
-        if($row){
-        mysqli_query($conn,"UPDATE Erabiltzaileak set pasahitza='" . $password . "', token='" . NULL . "' ,expDate='" . NULL . "' WHERE eposta='" . $emailId . "'");
-        echo '<br><p style="color:green">Zure pasahitza ongi berrezarri da.</p>';
-        }else{
-        echo '<br><p style="color:red">Zerbait gaizki joan da, saiatu berriro.</p>';
-        }
+            $emailId = $_POST['email'];
+            $token = $_POST['reset_link_token'];
+            $password = md5($_POST['password']);
+            $query = mysqli_query($nireSQLI,"SELECT * FROM Erabiltzaileak WHERE token='".$token."' and eposta='".$email."';");
+            $row = mysqli_num_rows($query);
+            if($row){
+                mysqli_query($nireSQLI,"UPDATE Erabiltzaileak SET pasahitza='" . $password . "', token='" . NULL . "', expDate='" . NULL . "' WHERE eposta='" . $emailId . "'");
+                echo '<br><p style="color:green">Zure pasahitza ongi berrezarri da.</p>';
+            }else{
+                echo '<br><p style="color:red">Zerbait gaizki joan da, saiatu berriro.</p>';
+            }
         }
         ?>
     </div>
