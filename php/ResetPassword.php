@@ -44,6 +44,7 @@
         error_reporting(0);
         if(isset($_POST['password']) && $_POST['code'])
         {
+            $sql = "SELECT * FROM erabiltzaileak WHERE eposta = '$_GET[eposta]' AND code ='$_POST[code]'";
             echo $sql;
             $data = $nireSQLI->query($sql);
             if (($data->num_rows) > 0){    
@@ -52,7 +53,7 @@
                         $eposta = $_GET['eposta'];
                         $code = $_POST['code'];
                         $password = crypt($_POST['password']);
-                        $sql = "UPDATE Erabiltzaileak SET pasahitza='" . $password . "', code='" . NULL . "' WHERE eposta='" . $eposta . "'";
+                        $sql = "UPDATE erabiltzaileak SET pasahitza='" . $password . "', code='" . NULL . "' WHERE eposta='" . $eposta . "'";
                         if (!$nireSQLI->query($sql)) {
                             $mezua = str_replace("'", "\'", $nireSQLI->error);
                             echo "<script>alert('Errorea datu-basean: $mezua')</script>";

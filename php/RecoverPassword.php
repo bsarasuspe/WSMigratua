@@ -35,17 +35,15 @@ if(isset($_POST['password-reset-token']) && $_POST['email'])
     $nireSQLI = new mysqli($zerbitzaria, $erabiltzailea, $gakoa, $db);
      
     $eposta = $_POST['email'];
- 
-    $result = mysqli_query($nireSQLI,"SELECT * FROM Erabiltzaileak WHERE eposta='" . $eposta . "'");
- 
-    $row= mysqli_fetch_array($result);
- 
-  if($row)
-  {
+
+    $sql = "SELECT * FROM erabiltzaileak WHERE eposta='" . $eposta . "'";
+
+    $ema = $nireSQLI->query($sql);
+
+  if(($ema->num_rows) > 0){
  
     $code = mt_Rand(100000,999999); 
- 
-    $update = mysqli_query($nireSQLI,"UPDATE Erabiltzaileak SET code='" . $code . "' WHERE eposta='" . $eposta . "'");
+    $nireSQLI->query("UPDATE erabiltzaileak SET code='" . $code . "' WHERE eposta='" . $eposta . "'");
  
     $link = "<a href='localhost/WSMIG/WSMigratua/php/ResetPassword.php'></a>";
  
@@ -114,7 +112,7 @@ if(isset($_POST['password-reset-token']) && $_POST['email'])
                                         <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
                                             Ezin dizugu zure pasahitz zaharra bidali, baina berrezarri dezakezu. Egin klik beheko botoiean eta pasahitza berria jarri honako kode hau erabilita: <b>'.$code.'</b>
                                         </p>
-                                        <a href="localhost/WSMIG/WSMigratua/php/ResetPassword.php?eposta='.$eposta.'"
+                                        <a href="https://sw.ikasten.io/~bsarasua001/proiektua/php/ResetPassword.php?eposta='.$eposta.'"
                                             style="background:#20e277;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Pasahitza berrezarri</a>
                                     </td>
                                 </tr>

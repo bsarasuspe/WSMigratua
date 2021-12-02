@@ -16,7 +16,7 @@
 	// init configuration
 	$clientID = '1042483473840-hnj6bb5p31vrv2as48q3jh8uu24dibp3.apps.googleusercontent.com';
 	$clientSecret = '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';
-	$redirectUri = 'http://localhost/WSMIG/WSMigratua/php/SocialLogin.php';
+	$redirectUri = 'https://sw.ikasten.io/~bsarasua001/proiektua/php/SocialLogIn.php';
 	  
 	// create Client Request to access Google API
 	$client = new Google_Client();

@@ -84,7 +84,7 @@
                     $irudia = addslashes(file_get_contents($irudiaIzen));
                 }
 
-                $sqlInsertQuestion = "INSERT INTO Questions(eposta, galdera, eZuzen, eOker1, eOker2, eOker3, zailtasuna, gaia, argazkia) 
+                $sqlInsertQuestion = "INSERT INTO questions(eposta, galdera, eZuzen, eOker1, eOker2, eOker3, zailtasuna, gaia, argazkia) 
                 VALUES ('$aldagaiak[frmeposta]', '$aldagaiak[frmgalderatxt]', '$aldagaiak[frmerantzunzuzena]', '$aldagaiak[frmerantzunokerra1]', '$aldagaiak[frmerantzunokerra2]', 
                         '$aldagaiak[frmerantzunokerra3]', '$aldagaiak[frmzailtasuna]', '$aldagaiak[frmgaiarloa]', '$irudia')";
 

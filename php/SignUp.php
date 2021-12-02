@@ -119,7 +119,7 @@ if (isset($_POST['eposta'])) {
 
     $encrypted_pwd = crypt($_POST["pasahitza"]);
 
-    $stmt = $dbh->prepare("INSERT INTO Erabiltzaileak(eposta, mota, deitura, pasahitza, irudia, irudia_dir) VALUES (?, ?, ?, ?, ?, ?)"); 
+    $stmt = $dbh->prepare("INSERT INTO erabiltzaileak(eposta, mota, deitura, pasahitza, irudia, irudia_dir) VALUES (?, ?, ?, ?, ?, ?)"); 
 
     $eposta = $_POST["eposta"];
     $erabiltzailemota = $_POST["erabiltzailemota"];

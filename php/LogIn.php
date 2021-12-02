@@ -48,7 +48,7 @@
                     die("DB-ra konexio bat egitean errore bat egon da: " . $nireSQLI->connect_error);
                 }*/
 
-                $stmt = $dbh->prepare("SELECT eposta, pasahitza, irudia_dir, mota FROM Erabiltzaileak WHERE eposta = ? AND blokeatuta = ?"); 
+                $stmt = $dbh->prepare("SELECT eposta, pasahitza, irudia_dir, mota FROM erabiltzaileak WHERE eposta = ? AND blokeatuta = ?"); 
 
                 $eposta = $_POST["eposta"];
                 $blokeatuta = 0;
@@ -77,10 +77,10 @@
                             header("location: Layout.php");
                         }
                     } else {
-                        echo '<p style="color: red"> Zure erabiltzailea edo pasahitza ez dira zuzenak. </p>';
+                        echo '<br><p style="color: red"> Zure erabiltzailea edo pasahitza ez dira zuzenak. </p>';
                     }
                 } else {
-                    echo '<p style="color: red"> Erabiltzailea ez da existitzen.</p>';
+                    echo '<br><p style="color: red"> Erabiltzailea ez da existitzen.</p>';
                 }
 
             }

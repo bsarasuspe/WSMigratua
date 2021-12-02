@@ -36,7 +36,7 @@
                     die("DB-ra konexio bat egitean errore bat egon da: " . $nireSQLI->connect_error);
                 }
 
-                $ema = $nireSQLI->query("SELECT * FROM Erabiltzaileak");
+                $ema = $nireSQLI->query("SELECT * FROM erabiltzaileak");
 
                 for ($x = 0; $x < $ema->num_rows; $x++){
                     $ema->data_seek($x);

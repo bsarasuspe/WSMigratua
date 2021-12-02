@@ -10,7 +10,7 @@ if($nireSQLI->connect_error) {
 }
 
 if(isset($_POST['eposta'])){
-    $ema = $nireSQLI->query("DELETE FROM Erabiltzaileak WHERE eposta = '".$_POST["eposta"]."'");
+    $ema = $nireSQLI->query("DELETE FROM erabiltzaileak WHERE eposta = '".$_POST["eposta"]."'");
 }
 
 header('Location: HandlingAccounts.php');
