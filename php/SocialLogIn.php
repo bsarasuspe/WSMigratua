@@ -51,7 +51,7 @@
 	 
 	  // now you can use this profile info to create account in your website and make user logged in.
 	} else {
-	  echo "<a href='".$client->createAuthUrl()."'>Google Login</a>";
+	  echo "<br><a href='".$client->createAuthUrl()."'><img src='../images/google.png' width='200'></a>";
 	}
 	?>
     </div>

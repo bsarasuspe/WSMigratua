@@ -45,7 +45,6 @@
         if(isset($_POST['password']) && $_POST['code'])
         {
             $sql = "SELECT * FROM erabiltzaileak WHERE eposta = '$_GET[eposta]' AND code ='$_POST[code]'";
-            echo $sql;
             $data = $nireSQLI->query($sql);
             if (($data->num_rows) > 0){    
                 if($_POST['password'] == $_POST['cpassword']){
