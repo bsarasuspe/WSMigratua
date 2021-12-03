@@ -38,6 +38,7 @@
     if (isset($_SESSION['kautotua']) && ($_SESSION['kautotua']) == "BAI" && ($_SESSION['mota']) == "3"){
         echo '<span><a href="HandlingAccounts.php">Erabiltzaileak kudeatu</a></span>';
     }
+    echo '<span><a href="Play.php">Goazen jolastera!</a></span>';
     echo '<span><a href="Credits.php">Kredituak</a></span>';
     ?>
 </nav>

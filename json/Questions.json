@@ -1,53 +1,155 @@
 {
     "assessmentItems": [
         {
-            "subject": "Mikologia",
-            "author": "rosa.arruabarrena@ehu.es",
+            "subject": "Objetivos de desarrollo sostenible",
+            "author": "mafalda001@ikasle.ehu.eus",
             "itemBody": {
-                "p": "Tripakiek zer dute kapela azpian?"
+                "p": "\u00bfCu\u00e1l es el fin de los objetivos de desarrollo sostenible?"
             },
             "correctResponse": {
-                "response": "Eztenak"
+                "response": "Que los pa\u00edses y sus sociedades emprendan un nuevo camino con el que mejorar la vida de todos, sin dejar a nadie atr\u00e1s"
             },
             "incorrectResponses": {
                 "response": [
-                    "Filamenduak",
-                    "Himenioa",
-                    "Hodiak"
+                    "Garantizar una vida sana y promover el bienestar de todos a todas las edades.",
+                    "Lograr que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles.",
+                    "Reducir la desigualdad en los pa\u00edses y entre ellos."
                 ]
             }
         },
         {
-            "subject": "GIH\/ODS",
+            "subject": "Objetivos de desarrollo sostenible",
             "author": "mafalda001@ikasle.ehu.eus",
             "itemBody": {
-                "p": "Garapen Iraunkorreko Helburu kopurua da: "
+                "p": "\u00bfCu\u00e1ntos objetivos hay?"
             },
             "correctResponse": {
                 "response": "17"
             },
             "incorrectResponses": {
                 "response": [
+                    "15",
                     "16",
-                    "19",
                     "18"
                 ]
             }
         },
         {
-            "subject": "EHU",
-            "author": "aruiz258@ikasle.ehu.eus",
+            "subject": "Objetivos de desarrollo sostenible",
+            "author": "mafalda001@ikasle.ehu.eus",
             "itemBody": {
-                "p": "Zein irakasgaian garatu da web-orri hau?"
+                "p": "\u00bfCu\u00e1l de los siguientes NO es un objetivo de desarrollo sostenible de la ONU?"
             },
             "correctResponse": {
-                "response": "WS"
+                "response": "Pobreza infantil"
             },
             "incorrectResponses": {
                 "response": [
-                    "SI2",
-                    "SZA",
-                    "DBD"
+                    "Igualdad de g\u00e9nero",
+                    "Industria, innovaci\u00f3n e infraestructuras",
+                    "Educaci\u00f3n de calidad"
+                ]
+            }
+        },
+        {
+            "subject": "Objetivos de desarrollo sostenible",
+            "author": "mafalda001@ikasle.ehu.eus",
+            "itemBody": {
+                "p": "\u00bfPara cu\u00e1ndo deber\u00edamos cumplir con al menos una de las metas de cada objetivo?"
+            },
+            "correctResponse": {
+                "response": "2030"
+            },
+            "incorrectResponses": {
+                "response": [
+                    "2025",
+                    "2035",
+                    "No hay una fecha establecida"
+                ]
+            }
+        },
+        {
+            "subject": "Objetivos de desarrollo sostenible",
+            "author": "mafalda001@ikasle.ehu.eus",
+            "itemBody": {
+                "p": "\u00bfCu\u00e1ntos pa\u00edses aprobaron los objetivos en 2015?"
+            },
+            "correctResponse": {
+                "response": "193"
+            },
+            "incorrectResponses": {
+                "response": [
+                    "213",
+                    "26",
+                    "89"
+                ]
+            }
+        },
+        {
+            "subject": "Objetivos de desarrollo sostenible",
+            "author": "mafalda001@ikasle.ehu.eus",
+            "itemBody": {
+                "p": "\u00bfA qu\u00e9 nos referimos con desarrollo sostenible?"
+            },
+            "correctResponse": {
+                "response": "Al desarrollo que satisface las necesidades del presente sin comprometer las necesidades del futuro."
+            },
+            "incorrectResponses": {
+                "response": [
+                    "A que la sociedad crezca lo m\u00e1ximo posible.",
+                    "\u00danicamente a los 17 objetivos impulsados por las Naciones Unidas.",
+                    "A reutilizar los productos que consumimos."
+                ]
+            }
+        },
+        {
+            "subject": "Objetivos de desarrollo sostenible",
+            "author": "mafalda001@ikasle.ehu.eus",
+            "itemBody": {
+                "p": "\u00bfQu\u00e9 cantidad de agua del mundo es potable?"
+            },
+            "correctResponse": {
+                "response": "3%"
+            },
+            "incorrectResponses": {
+                "response": [
+                    "0,5%",
+                    "5%",
+                    "1%"
+                ]
+            }
+        },
+        {
+            "subject": "Objetivos de desarrollo sostenible",
+            "author": "mafalda001@ikasle.ehu.eus",
+            "itemBody": {
+                "p": "\u00bfQu\u00e9 podemos hacer para cuidar nuestro planeta?"
+            },
+            "correctResponse": {
+                "response": "Aprovechar la luz del sol."
+            },
+            "incorrectResponses": {
+                "response": [
+                    "Nunca utilizar la calefacci\u00f3n.",
+                    "Todas son correctas.",
+                    "Nunca encender las luces."
+                ]
+            }
+        },
+        {
+            "subject": "Objetivos de desarrollo sostenible",
+            "author": "mafalda001@ikasle.ehu.eus",
+            "itemBody": {
+                "p": "\u00bfQu\u00e9 podemos exigirles a nuestros representantes pol\u00edticos?"
+            },
+            "correctResponse": {
+                "response": "Podemos exigirles que cumplan sus responsabilidades con total transparencia."
+            },
+            "incorrectResponses": {
+                "response": [
+                    "S\u00f3lo podemos exigirles que cumplan sus responsabilidades.",
+                    "Podemos exigirles que cumplan sus responsabilidades con total transparencia.",
+                    "No podemos exigirles nada."
                 ]
             }
         }

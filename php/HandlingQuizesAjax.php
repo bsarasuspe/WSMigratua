@@ -21,7 +21,7 @@
             exit();
         }
     ?>
-    <section class="main" id="s1">
+    <section class="main" id="s1" style="min-height:500px;height:100%;">
         <div id="galdetegia">
             <div>
                 <b>Nire galderak / galderak guztira</b>

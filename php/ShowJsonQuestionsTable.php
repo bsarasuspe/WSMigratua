@@ -11,9 +11,10 @@
         }
     ?>
 <body style="background-color:white;">
-        <table style="width:700px" border="1px" bgcolor="white">
+        <table style="width:1100px" border="1px" bgcolor="white">
             <thead>
             <th>Egilea</th>
+            <th>Gaia</th>
             <th>Enuntziatua</th>
             <th>Erantzun zuzena</th>
             </thead>
@@ -25,9 +26,11 @@
                 $eposta = $galdetegi->author;
                 $enuntziatua = $galdetegi->itemBody->p;
                 $erantzun_z = $galdetegi->correctResponse->response;
+                $gaia = $galdetegi->subject;
 
                 echo '<tr>';
                 echo "<td>" . $eposta . "</td>";
+                echo "<td>" . $gaia . "</td>";
                 echo "<td>" . $enuntziatua . "</td>";
                 echo "<td>" . $erantzun_z . "</td>";
                 echo '</tr>';

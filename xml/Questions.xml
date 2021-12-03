@@ -1,43 +1,121 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="ShowXmlQuestions.xsl"?>
 <assessmentItems>
-  <assessmentItem author="rosa.arruabarrena@ehu.es" subject="Mikologia">
+  <assessmentItem author="mafalda001@ikasle.ehu.eus" subject="Objetivos de desarrollo sostenible">
     <itemBody>
-      <p>Zein Amanita da jangarria?</p>
+      <p>&#xBF;Cu&#xE1;l es el fin de los objetivos de desarrollo sostenible?</p>
     </itemBody>
     <correctResponse>
-      <response>Caesarea</response>
+      <response>Que los pa&#xED;ses y sus sociedades emprendan un nuevo camino con el que mejorar la vida de todos, sin dejar a nadie atr&#xE1;s</response>
     </correctResponse>
     <incorrectResponses>
-      <response>Phalloides</response>
-      <response>Muscaria</response>
-      <response>Virosa</response>
+      <response>Garantizar una vida sana y promover el bienestar de todos a todas las edades.</response>
+      <response>Lograr que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles.</response>
+      <response>Reducir la desigualdad en los pa&#xED;ses y entre ellos.</response>
     </incorrectResponses>
   </assessmentItem>
-  <assessmentItem author="mafalda001@ikasle.ehu.eus" subject="GIH/ODS">
+  <assessmentItem author="mafalda001@ikasle.ehu.eus" subject="Objetivos de desarrollo sostenible">
     <itemBody>
-      <p>Zer informatika enpresak eskaintzen du hezkuntza, desberdintasunak arintzeko materialak eskainiz?</p>
+      <p>&#xBF;Cu&#xE1;ntos objetivos hay?</p>
     </itemBody>
     <correctResponse>
-      <response>Google</response>
+      <response>17</response>
     </correctResponse>
     <incorrectResponses>
-      <response>Facebook</response>
-      <response>Twiter</response>
-      <response>VMicrosoft</response>
+      <response>15</response>
+      <response>16</response>
+      <response>18</response>
     </incorrectResponses>
   </assessmentItem>
-  <assessmentItem author="aruiz258@ikasle.ehu.eus" subject="EHU">
+  <assessmentItem author="mafalda001@ikasle.ehu.eus" subject="Objetivos de desarrollo sostenible">
     <itemBody>
-      <p>Zein irakasgaian garatu da web-orri hau?</p>
+      <p>&#xBF;Cu&#xE1;l de los siguientes NO es un objetivo de desarrollo sostenible de la ONU?</p>
     </itemBody>
     <correctResponse>
-      <response>WS</response>
+      <response>Pobreza infantil</response>
     </correctResponse>
     <incorrectResponses>
-      <response>SI2</response>
-      <response>SZA</response>
-      <response>DBD</response>
+      <response>Igualdad de g&#xE9;nero</response>
+      <response>Industria, innovaci&#xF3;n e infraestructuras</response>
+      <response>Educaci&#xF3;n de calidad</response>
+    </incorrectResponses>
+  </assessmentItem>
+  <assessmentItem author="mafalda001@ikasle.ehu.eus" subject="Objetivos de desarrollo sostenible">
+    <itemBody>
+      <p>&#xBF;Para cu&#xE1;ndo deber&#xED;amos cumplir con al menos una de las metas de cada objetivo?</p>
+    </itemBody>
+    <correctResponse>
+      <response>2030</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>2025</response>
+      <response>2035</response>
+      <response>No hay una fecha establecida</response>
+    </incorrectResponses>
+  </assessmentItem>
+  <assessmentItem author="mafalda001@ikasle.ehu.eus" subject="Objetivos de desarrollo sostenible">
+    <itemBody>
+      <p>&#xBF;Cu&#xE1;ntos pa&#xED;ses aprobaron los objetivos en 2015?</p>
+    </itemBody>
+    <correctResponse>
+      <response>193</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>213</response>
+      <response>26</response>
+      <response>89</response>
+    </incorrectResponses>
+  </assessmentItem>
+  <assessmentItem author="mafalda001@ikasle.ehu.eus" subject="Objetivos de desarrollo sostenible">
+    <itemBody>
+      <p>&#xBF;A qu&#xE9; nos referimos con desarrollo sostenible?</p>
+    </itemBody>
+    <correctResponse>
+      <response>Al desarrollo que satisface las necesidades del presente sin comprometer las necesidades del futuro.</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>A que la sociedad crezca lo m&#xE1;ximo posible.</response>
+      <response>&#xDA;nicamente a los 17 objetivos impulsados por las Naciones Unidas.</response>
+      <response>A reutilizar los productos que consumimos.</response>
+    </incorrectResponses>
+  </assessmentItem>
+  <assessmentItem author="mafalda001@ikasle.ehu.eus" subject="Objetivos de desarrollo sostenible">
+    <itemBody>
+      <p>&#xBF;Qu&#xE9; cantidad de agua del mundo es potable?</p>
+    </itemBody>
+    <correctResponse>
+      <response>3%</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>0,5%</response>
+      <response>5%</response>
+      <response>1%</response>
+    </incorrectResponses>
+  </assessmentItem>
+  <assessmentItem author="mafalda001@ikasle.ehu.eus" subject="Objetivos de desarrollo sostenible">
+    <itemBody>
+      <p>&#xBF;Qu&#xE9; podemos hacer para cuidar nuestro planeta?</p>
+    </itemBody>
+    <correctResponse>
+      <response>Aprovechar la luz del sol.</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>Nunca utilizar la calefacci&#xF3;n.</response>
+      <response>Todas son correctas.</response>
+      <response>Nunca encender las luces.</response>
+    </incorrectResponses>
+  </assessmentItem>
+  <assessmentItem author="mafalda001@ikasle.ehu.eus" subject="Objetivos de desarrollo sostenible">
+    <itemBody>
+      <p>&#xBF;Qu&#xE9; podemos exigirles a nuestros representantes pol&#xED;ticos?</p>
+    </itemBody>
+    <correctResponse>
+      <response>Podemos exigirles que cumplan sus responsabilidades con total transparencia.</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>S&#xF3;lo podemos exigirles que cumplan sus responsabilidades.</response>
+      <response>Podemos exigirles que cumplan sus responsabilidades con total transparencia.</response>
+      <response>No podemos exigirles nada.</response>
     </incorrectResponses>
   </assessmentItem>
 </assessmentItems>
