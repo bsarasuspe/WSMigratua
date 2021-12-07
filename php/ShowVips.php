@@ -17,7 +17,7 @@
       <h3>Ikusi VIP erabiltzaileak</h3><br>
 	<?php
         $curl = curl_init();
-        $url = "https://sw.ikasten.io/~T52/rest/VipUsers/";
+        $url = "https://sw.ikasten.io/~bsarasua001/rest/VipUsers/";
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         $str = curl_exec($curl);

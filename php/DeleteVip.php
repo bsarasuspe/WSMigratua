@@ -27,7 +27,7 @@
       if (isset($_POST['eposta'])){
         $ch = curl_init();
         $eposta = $_POST['eposta'];
-        $url = "https://sw.ikasten.io/~T52/rest/VipUsers/".$eposta;
+        $url = "https://sw.ikasten.io/~bsarasua001/rest/VipUsers/".$eposta;
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
