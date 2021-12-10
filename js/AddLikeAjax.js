@@ -1,18 +1,15 @@
 function AddLikeAjax(id) {
-    alert("proba");
     $.ajax({
-        url: '../php/AddLike.php',
-        data: {galdera_id: id},
+        url: '../php/AddLike.php?galdera_id='+id,
         metod: 'GET',
-        type: 'GET',
         processData: false,
         contentType: false,
         cache: false,
         success: function (res) {
-            $("#bozkatu").html("Ongi bozkatu duzu!");
+            $("#bozkatu").html("<p style='color:green;'>Ongi bozkatu duzu!</p>");
         },
         error: function (err) {
-            $("#bozkatu").html("Errore bat gertatu da bozkatzean!");
+            $("#bozkatu").html("<p style='color:red;'>Errore bat gertatu da bozkatzean!</p>");
         }
     });
 }

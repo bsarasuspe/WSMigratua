@@ -12,6 +12,7 @@
       <?php
         if(isset($_POST["erantzuna"])){
           \array_splice($_SESSION["q_id"], 0, 1);
+          array_push($_SESSION["q_erantzunda_id"], $_SESSION["current_q_id"]);
           $_SESSION["q_erantzunda"] = $_SESSION["q_erantzunda"] + 1;
           if(strcmp($_POST["erantzuna"],$_SESSION["eZuzen"]) !== 0){
             $_SESSION["q_gaizki"] = $_SESSION["q_gaizki"] + 1;

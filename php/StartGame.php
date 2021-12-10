@@ -18,7 +18,9 @@
 		for ($x = 0; $x < $ema->num_rows; $x++){
 			$ema->data_seek($x);
 			$datuak = $ema->fetch_assoc();
-			array_push($_SESSION["q_id"], $datuak['id']);
+			if(!in_array($datuak["id"], $_SESSION["q_erantzunda_id"])){
+				array_push($_SESSION["q_id"], $datuak['id']);
+			}
 		}
 		shuffle($_SESSION["q_id"]);
 		$_SESSION["q_kop"] = sizeof($_SESSION["q_id"]);

@@ -69,6 +69,7 @@
                         $_SESSION["irudia"] = $tabladatuak["irudia_dir"];
                         $_SESSION["mota"] = $tabladatuak["mota"];
                         $_SESSION["gaiak_erantzunda"] = array();
+                        $_SESSION["q_erantzunda_id"] = array();
                         echo '<script> alert("Logeatu egin zara, '.$tabladatuak["eposta"].'") </script>';
                         if($_SESSION["mota"] == 1){
                             header("location: HandlingQuizesAjax.php");

@@ -10,8 +10,10 @@
 
 	if(!isset($_SESSION["gaiak_erantzunda"])){
 		$_SESSION["gaiak_erantzunda"] = array();
-	}else{
-		
+	}
+
+	if(!isset($_SESSION["q_erantzunda_id"])){
+		$_SESSION["q_erantzunda_id"] = array();
 	}
 	
   	if(isset($_SESSION["q_id"])){
@@ -61,6 +63,21 @@
       ?>
       	</tbody>
 	</table>  </center>
+	
+	<?php
+		if(!isset($_SESSION["vip_jokalaria"])){
+			echo "<br><br>
+					<h4>VIP erabiltzailea bazara, sartu eposta eta gorde zure puntuak:</h4>
+					<br>
+					<form id='vip' name='vip' method='post' action='VipJokalaria.php'>
+							  <input type='text' id='vip_eposta' name='vip_eposta' placeholder='Sartu hemen zure eposta'>
+							  <button type='submit' id='vipsubmit'>Sartu</button>
+							  </form>";
+		}else{
+			echo "Erantzun zuzen eta akats guztiak bsarasua@ehu.eus erabiltzailean gordeko dira.";
+		}
+	?>
+
     </div>
   </section>
   <?php include '../html/Footer.html' ?>
