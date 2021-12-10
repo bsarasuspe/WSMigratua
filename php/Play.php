@@ -29,7 +29,8 @@
 
       <h2>Jolastu</h2>
       <br>
-      Aukeratu gai bat eta hasi jolasten!<br><br>
+      Aukeratu gai bat eta hasi jolasten!<br>
+      Gai bateko galderak amaitzen badira ezingo duzu gai horretan jolastu berriz saioa hasi arte.<br><br>
 
 		<center><table style="text-align:center;" border="1" cellpadding="5">
 			<thead>
@@ -63,19 +64,51 @@
       ?>
       	</tbody>
 	</table>  </center>
-	
+
 	<?php
-		if(!isset($_SESSION["vip_jokalaria"])){
+		if(!isset($_SESSION["eposta"])){
 			echo "<br><br>
-					<h4>VIP erabiltzailea bazara, sartu eposta eta gorde zure puntuak:</h4>
-					<br>
-					<form id='vip' name='vip' method='post' action='VipJokalaria.php'>
-							  <input type='text' id='vip_eposta' name='vip_eposta' placeholder='Sartu hemen zure eposta'>
-							  <button type='submit' id='vipsubmit'>Sartu</button>
-							  </form>";
-		}else{
-			echo "Erantzun zuzen eta akats guztiak bsarasua@ehu.eus erabiltzailean gordeko dira.";
+					<h4>Gorde lortutako emaitzak</h4>";
+			if(!isset($_SESSION["vip_jokalaria"])){
+				echo "<br>
+						VIP erabiltzailea bazara, sartu zure eposta eta gorde puntuak:
+						<br><br>
+						<form id='vip' name='vip' method='post' action=''>
+								  <input type='text' id='vip_eposta' name='vip_eposta' placeholder='Sartu hemen zure eposta'>
+								  <button type='submit' id='vipsubmit'>Sartu</button>
+								  </form>";
+			}else{
+				echo "<br>Erantzun zuzen eta akats guztiak $_SESSION[vip_jokalaria] erabiltzailean gordeko dira hemendik aurrera.
+				<br><br>
+				<form id='vip' name='vip' method='post' action=''>
+								  <input type='hidden' id='vip_eposta' name='vip_eposta' placeholder='Sartu hemen zure eposta'>
+								  <button type='submit' id='vipsubmit'>Utzi emaitzak gordetzeari</button>
+								  </form>
+				";
+			}
 		}
+
+		if (isset($_POST['vip_eposta'])){
+        $curl = curl_init();
+        $eposta = $_POST['vip_eposta'];
+        $url = "https://sw.ikasten.io/~bsarasua001/rest/VipUsers/".$eposta;
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        $str = curl_exec($curl);
+        //echo $str; 
+        curl_close($curl);
+        $vipstr = "$_POST[vip_eposta] erabiltzailea VIPa da.";
+        if (strcmp($str, $vipstr) !== 0) {
+        	echo "<br>";
+        	echo $str;
+        }else{
+        	$_SESSION["vip_jokalaria"] = $_POST["vip_eposta"];
+        	echo "<script> window.location.href = 'Play.php';</script>";
+
+        }
+        
+    }
+
 	?>
 
     </div>
