@@ -3,7 +3,8 @@ function AddLikeAjax(id) {
     $.ajax({
         url: '../php/AddLike.php',
         data: {galdera_id: id},
-        type: GET,
+        metod: 'GET',
+        type: 'GET',
         processData: false,
         contentType: false,
         cache: false,
