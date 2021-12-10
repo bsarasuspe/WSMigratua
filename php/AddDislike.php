@@ -13,6 +13,4 @@ if(isset($_POST['galdera_id'])){
     $ema = $nireSQLI->query("UPDATE questions SET dislikes = dislikes + 1  WHERE id='".$_POST["galdera_id"]."'");
 };
 
-return "";
-
 ?>

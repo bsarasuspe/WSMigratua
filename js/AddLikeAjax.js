@@ -1,8 +1,12 @@
 function AddLikeAjax(id) {
+    alert("proba");
     $.ajax({
-        url: '../php/AddLike.php?',
+        url: '../php/AddLike.php',
         data: {galdera_id: id},
-        type: POST,
+        type: GET,
+        processData: false,
+        contentType: false,
+        cache: false,
         success: function (res) {
             $("#bozkatu").html("Ongi bozkatu duzu!");
         },

@@ -1,6 +1,6 @@
 function AddDislikeAjax() {
     $.ajax({
-        url: '../php/AddDislike.php?',
+        url: '../php/AddDislike.php',
         data: {galdera_id: id},
         type: POST,
         success: function (res) {

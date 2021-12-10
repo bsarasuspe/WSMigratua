@@ -9,10 +9,8 @@ if($nireSQLI->connect_error) {
     die("DB-ra konexio bat egitean errore bat egon da: " . $nireSQLI->connect_error);
 }
 
-if(isset($_POST['galdera_id'])){
-    $ema = $nireSQLI->query("UPDATE questions SET likes = likes + 1 WHERE id='".$_POST["galdera_id"]."'");
+if(isset($_GET['galdera_id'])){
+    $ema = $nireSQLI->query("UPDATE questions SET likes = likes + 1 WHERE id='".$_GET["galdera_id"]."'");
 };
-
-return "";
 
 ?>
