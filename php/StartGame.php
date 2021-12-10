@@ -12,6 +12,7 @@
 
 		$_SESSION["q_id"] = array();
 		$_SESSION["q_erantzunda"] = '0';
+		$_SESSION["aux_gaia"] = $_POST["gaia"];
 		$_SESSION["q_egoki"] = '0';
 		$_SESSION["q_gaizki"] = '0';
 		for ($x = 0; $x < $ema->num_rows; $x++){

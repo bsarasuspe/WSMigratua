@@ -7,6 +7,13 @@
 <body>
   <?php include '../php/Menus.php' ?>
   <?php
+
+	if(!isset($_SESSION["gaiak_erantzunda"])){
+		$_SESSION["gaiak_erantzunda"] = array();
+	}else{
+		
+	}
+	
   	if(isset($_SESSION["q_id"])){
   		if(sizeof($_SESSION["q_id"]) > 0){
 			echo "<script> window.location.href = 'Question.php';</script>";
@@ -42,12 +49,14 @@
 		for ($x = 0; $x < $ema->num_rows; $x++){
 			$ema->data_seek($x);
 			$datuak = $ema->fetch_assoc();
-			echo "<tr>";
-			echo "<td>" .$datuak['gaia']. "</td>";
-			echo "<td><form id='jolastu' name='jolastu' method='post' action='StartGame.php'>
-                          <input id='gaia' name='gaia' type='hidden' value='$datuak[gaia]'>
-                          <button type='submit' id='jolastu'>Jolastu</button>
-                          </form></td>";
+			if(!in_array($datuak["gaia"], $_SESSION["gaiak_erantzunda"])){
+				echo "<tr>";
+				echo "<td>" .$datuak['gaia']. "</td>";
+				echo "<td><form id='jolastu' name='jolastu' method='post' action='StartGame.php'>
+							  <input id='gaia' name='gaia' type='hidden' value='$datuak[gaia]'>
+							  <button type='submit' id='jolastu'>Jolastu</button>
+							  </form></td>";
+			}
 		}
       ?>
       	</tbody>

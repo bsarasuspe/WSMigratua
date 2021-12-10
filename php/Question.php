@@ -35,6 +35,8 @@
 				die("DB-ra konexio bat egitean errore bat egon da: " . $nireSQLI->connect_error);
 			}
 			$ema = $nireSQLI->query("SELECT * FROM questions WHERE id='".$_SESSION["q_id"][0]."'");
+
+			$_SESSION["current_q_id"] = $_SESSION["q_id"][0];
 			$datuak = $ema->fetch_assoc();
       		
       		echo '<h3>'.$datuak["galdera"].'</h3><br>';

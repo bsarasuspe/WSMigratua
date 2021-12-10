@@ -2,6 +2,9 @@
 <html>
 <head>
   <?php include '../html/Head.html'?>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="../js/AddLikeAjax.js"></script>
+  <script src="../js/AddDislikeAjax.js"></script>
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
@@ -21,6 +24,8 @@
                   <br>
                   <h2>Asmatu duzu!</h2>';
           }
+          echo "<br><h3>Gustatu zaizu galdera?</h3><br>
+          <div id='bozkatu'><img src='../images/like.png' width='30px' onclick='AddLikeAjax($_SESSION[current_q_id])'> <img src='../images/dislike.png' width='30px' onclick='AddDislikeAjax($_SESSION[current_q_id])'><br></div>";
         }
       ?>
       

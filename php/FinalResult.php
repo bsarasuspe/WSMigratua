@@ -11,11 +11,12 @@
     <br>
     Hona hemen lortutako emaitza:<br><br>
     <?php
+      array_push($_SESSION["gaiak_erantzunda"] , $_SESSION['aux_gaia']);
       echo "<p style='color:green;'>$_SESSION[q_egoki] galdera ongi erantzun dituzu.</p>
       <p style='color:red;'>$_SESSION[q_gaizki] galdera gaizki erantzun dituzu.</p><br>"
     ?>
     <form id='amaitu' name='amaitu' method='post' action='EndGame.php'>
-      <button type='submit' id='jolastu'>Jolastu berriz</button>
+      <button type='submit' id='jolastu'>Jolastu beste gaietan</button>
     </form>
   </section>
   <?php include '../html/Footer.html' ?>
