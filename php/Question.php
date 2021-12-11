@@ -9,7 +9,7 @@
   <section class="main" id="s1">
     <div>
 
-		<b>Erantzundako galderak</b>
+	<!--	<b>Erantzundako galderak</b>
 		<div id="galderaKop" style="border:1px solid black; width:300px; margin:auto;">
 			<?php
 				if(isset($_SESSION["q_id"])){
@@ -20,11 +20,11 @@
 			?>
 
 		</div>
-		<br>
+		<br>-->
 		<form id='amaitu' name='amaitu' method='post' action='EndGame.php'>
 			<button type='submit' id='jolastu'>Irten jokotik</button>
 		</form>
-		<br><br>
+		<br>
 
 		<?php
 			if(sizeof($_SESSION["q_id"]) > 0){
@@ -55,7 +55,7 @@
 			array_push($erantzun_posibleak, $datuak['eOker3']);
 			shuffle($erantzun_posibleak);
 
-			echo '<form id="question" name="question" method="post" action="result.php"><br>';
+			echo '<form id="question" name="question" method="post" action="Result.php"><br>';
 			for($i = 0; $i < count($erantzun_posibleak); ++$i) {
 				echo '<input type="radio" id="erantzuna" name="erantzuna" value="'.$erantzun_posibleak[$i].'">
 					<label for="erantzuna">'.$erantzun_posibleak[$i].'</label>
