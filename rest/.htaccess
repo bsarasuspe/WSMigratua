@@ -1,3 +1,5 @@
 RewriteEngine on
-RewriteRule VipUsers/(.+) VipUsers.php?eposta=$1
+
+RewriteRule ^VipUsers/([a-zA-Z0-9@\.]+)$ VipUsers.php?eposta=$1
+RewriteRule ^VipUsers/([a-z]+)+/([0-9]+)$ VipUsers.php?top=$1&amount=$2
 RewriteRule VipUsers/ VipUsers.php

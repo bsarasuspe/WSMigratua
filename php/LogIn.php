@@ -70,6 +70,11 @@
                         $_SESSION["mota"] = $tabladatuak["mota"];
                         $_SESSION["gaiak_erantzunda"] = array();
                         $_SESSION["q_erantzunda_id"] = array();
+                        unset($_SESSION["q_id"]);
+                        unset($_SESSION["q_erantzunda"]);
+                        unset($_SESSION["q_egoki"]);
+                        unset($_SESSION["q_gaizki"]);
+
                         echo '<script> alert("Logeatu egin zara, '.$tabladatuak["eposta"].'") </script>';
                         if($_SESSION["mota"] == 1){
                             header("location: HandlingQuizesAjax.php");

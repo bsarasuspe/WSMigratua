@@ -19,11 +19,41 @@
             echo '<img src="../images/fallado.png" width="100">
                   <br>
                   <h2>Ez duzu asmatu!</h2>';
+                if (isset($_SESSION['vip_jokalaria'])){
+                  $ch = curl_init();
+                  $eposta = $_SESSION['vip_jokalaria'];
+                  curl_setopt($ch, CURLOPT_URL, "https://sw.ikasten.io/~bsarasua001/rest/VipUsers/");
+                  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                  curl_setopt($ch, CURLOPT_POST, true);
+                  $data = array(
+                    'eposta'=> $eposta,
+                    'okerra'=> '1',
+                  );
+                  curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+                  $output = curl_exec($ch);
+                  echo $output;
+                  curl_close($ch);
+                }
           }else{
             $_SESSION["q_egoki"] = $_SESSION["q_egoki"] + 1;
             echo '<img src="../images/acertado.png" width="100">
                   <br>
                   <h2>Asmatu duzu!</h2>';
+                if (isset($_SESSION['vip_jokalaria'])){
+                  $ch = curl_init();
+                  $eposta = $_SESSION['vip_jokalaria'];
+                  curl_setopt($ch, CURLOPT_URL, "https://sw.ikasten.io/~bsarasua001/rest/VipUsers/");
+                  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                  curl_setopt($ch, CURLOPT_POST, true);
+                  $data = array(
+                    'eposta'=> $eposta,
+                    'zuzena'=> '1',
+                  );
+                  curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+                  $output = curl_exec($ch);
+                  echo $output;
+                  curl_close($ch);
+                }
           }
           echo "<br><h3>Gustatu zaizu galdera?</h3><br>
           <div id='bozkatu'><img src='../images/like.png' width='30px' onclick='AddLikeAjax($_SESSION[current_q_id])'> <img src='../images/dislike.png' width='30px' onclick='AddDislikeAjax($_SESSION[current_q_id])'><br></div>";
