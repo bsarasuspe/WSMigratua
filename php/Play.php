@@ -80,10 +80,9 @@
 			}else{
 				echo "<br>Erantzun zuzen eta akats guztiak $_SESSION[vip_jokalaria] erabiltzailean gordeko dira hemendik aurrera.
 				<br><br>
-				<form id='vip' name='vip' method='post' action=''>
-								  <input type='hidden' id='vip_eposta' name='vip_eposta' placeholder='Sartu hemen zure eposta'>
-								  <button type='submit' id='vipsubmit'>Utzi emaitzak gordetzeari</button>
-								  </form>
+				<form id='vip' name='vip' method='post' action='VipJokalariaUnset.php'>
+					<button type='submit' id='vipsubmit'>Utzi emaitzak gordetzeari</button>
+				</form>
 				";
 			}
 		}
@@ -103,8 +102,7 @@
         	echo $str;
         }else{
         	$_SESSION["vip_jokalaria"] = $_POST["vip_eposta"];
-        	echo "<script> window.location.href = 'Play.php';</script>";
-
+        	header('Location: Play.php');
         }
         
     }
